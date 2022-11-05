@@ -1,0 +1,28 @@
+{
+  "name": "vhv3y8.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "ejslint index.ejs",
+    "build": "ejs index.ejs -f projects.json -o index.html && sass --style=compressed --no-source-map style.scss:style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vhv3y8/vhv3y8.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vhv3y8/vhv3y8.github.io/issues"
+  },
+  "homepage": "https://github.com/vhv3y8/vhv3y8.github.io#readme",
+  "devDependencies": {
+    "ejs": "^3.1.8",
+    "ejs-lint": "^2.0.0",
+    "sass": "^1.56.0",
+    "showdown": "^2.1.0"
+  }
+}
