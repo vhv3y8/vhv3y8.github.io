@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "ejslint index.ejs",
-    "build": "ejs index.ejs -f projects.json -o index.html && sass --style=compressed --no-source-map style.scss:style.css"
+    "build": "ejs src/index.ejs -f projects/info.json -o index.html && sass --style=compressed --no-source-map src/scss/style.scss:style.css"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/vhv3y8/vhv3y8.github.io#readme",
   "devDependencies": {
+    "@types/node": "^18.11.9",
     "ejs": "^3.1.8",
     "ejs-lint": "^2.0.0",
     "sass": "^1.56.0",
