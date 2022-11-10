@@ -14,7 +14,10 @@
 <body>
   <main>
     <header>
-      <h1><a href=".">vhv3y8</a></h1>
+      <h1><a href=".">vhv3y8</a>
+        <span id="name">Ryu JeongHyeon</span>
+      </h1>
+
       <ul>
         <li>
           <a href="https://github.com/vhv3y8" target="_blank">
@@ -29,38 +32,133 @@
       </ul>
     </header>
 
-    <article>
+    <article id="searchContainer">
+      <!-- 검색창, 태그 -->
+      <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+      <input id="searchInput" type="text" placeholder="이름, 설명, 링크, ...">
+
+      <ul id="tags">
+        <li class="tag">
+          <span class="name">크롬 확장프로그램</span>
+          <span class="count">1</span>
+        </li>
+        <li class="tag">안드로이드 앱</li>
+        <li class="tag">PWA</li>
+        <li class="tag">electron</li>
+        <li class="tag">컴파일러</li>
+        <li class="tag">svelte</li>
+        <li class="tag">react</li>
+        <li class="tag"></li>
+        <li class="tag"></li>
+        <li class="tag"></li>
+      </ul>
+    </article>
+
+    <p class="countBlock">All <span class="count">23</span></p>
+    <hr>
+
+    <article id="list">
       
       
       <section>
 
-        <div class="icon">
-          <img src="/snapshot-tabs/snapshottabs.png" alt="">
-        </div>
-
-        <div class="description">
-          <p class="name">Snapshot Tabs</p>
-
+        <h2 class="name">
+          <span class="title">Snapshot Tabs</span>
           
           <p class="tagContainer">
             
-            <span class="tag">CHROME-EXTENSION</span>
+            <span class="tag">크롬 확장프로그램</span>
             
           </p class="tagContainer">
           
+        </h2>
 
-          <p class="info">히스토리의 확장 느낌으로 탭들을 한꺼번에 저장하게 해주는 확장프로그램</p>
+        <div class="middle">
+          <div class="icon">
+            <img src="projects/snapshot-tabs/snapshottabs.png" alt="">
+          </div>
 
-          <p>
-            <a href="https://chrome.google.com/webstore/detail/snapshot-tabs/ffmcpchgchdikjmkfjglkhidmjploinc">https://chrome.google.com/webstore/detail/snapshot-tabs/ffmcpchgchdikjmkfjglkhidmjploinc</a>
-          </p>
+          <div class="description">
 
+
+
+            <p class="info">히스토리의 확장 느낌으로 탭들을 한꺼번에 저장하게 해주는 확장프로그램</p>
+
+            <p>
+              <a href="https://chrome.google.com/webstore/detail/snapshot-tabs/ffmcpchgchdikjmkfjglkhidmjploinc">https://chrome.google.com/webstore/detail/snapshot-tabs/ffmcpchgchdikjmkfjglkhidmjploinc</a>
+            </p>
+
+          </div>
+        </div>
+
+        
+        <div class="sectionFooter">
+          
+          
+
+          <span class="period"><strong>2022.05 ~</strong></span>
+          
           
         </div>
+        
       </section>
+      <hr>
       
-    </article>
+      
+      <section>
+
+        <h2 class="name">
+          <span class="title">test22</span>
+          
+          <p class="tagContainer">
+            
+            <span class="tag">android</span>
+            
+          </p class="tagContainer">
+          
+        </h2>
+
+        <div class="middle">
+          <div class="icon">
+            <img src="projects/snapshot-tabs/snapshottabs.png" alt="">
+          </div>
+
+          <div class="description">
+
+
+
+            <p class="info">tttt</p>
+
+            <p>
+              <a href="https://chrome.google.com/webstore/detail/snapshot-tabs/ffmcpchgchdikjmkfjglkhidmjploinc">https://chrome.google.com/webstore/detail/snapshot-tabs/ffmcpchgchdikjmkfjglkhidmjploinc</a>
+            </p>
+
+          </div>
+        </div>
+
+        
+        <div class="sectionFooter">
+          
+          
+
+          <span class="period"><strong>2022.11 ~</strong></span>
+          
+          
+          <a href="?name=test22 " class="more">
+            <span>more...</span>
+          </a>
+          
+        </div>
+        
+      </section>
+      <hr>
+      
+    </article id="list">
   </main>
+
+  <footer>
+    test
+  </footer>
 </body>
 
 </html>
