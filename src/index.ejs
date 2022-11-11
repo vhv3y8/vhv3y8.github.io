@@ -32,7 +32,7 @@
       </ul>
     </header>
 
-    <article id="searchContainer">
+    <section id="searchContainer">
       <!-- 검색창, 태그 -->
       <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
       <input id="searchInput" type="text" placeholder="이름, 설명, 링크, ...">
@@ -52,15 +52,15 @@
         <li class="tag"></li>
         <li class="tag"></li>
       </ul>
-    </article>
+    </section>
 
     <p class="countBlock">All <span class="count">23</span></p>
     <hr>
 
-    <article id="list">
+    <section id="list">
       <% for (let i=0; i < infoArr.length; i++) { %>
       <% let curr = infoArr[i]; %>
-      <section>
+      <article>
 
         <h2 class="name">
           <span class="title"><%= curr.name %></span>
@@ -105,10 +105,10 @@
           <% } %>
         </div>
         <% } %>
-      </section>
+      </article>
       <hr>
       <% } %>
-    </article id="list">
+    </section id="list">
   </main>
 
   <footer>
