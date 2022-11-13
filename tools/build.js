@@ -2,16 +2,28 @@ const showdown = require("showdown");
 const fs = require("fs");
 const path = require("path");
 
-const srcPath = __dirname;
-const outputFilePath = path.join(srcPath, "..", "projects", "htmlString.json");
-console.log(outputFilePath);
+const projectPath = path.join(__dirname, "..", "projects");
+const outputFilePath = path.join(__dirname, "..", "projects", "htmlString.json");
 
 const converter = new showdown.Converter();
 
-// let text = '# hello, markdown!';
-// let html = converter.makeHtml(text);
-// console.log(html);
+let directoriesWithIndexMd = fs.readdirSync(projectPath, { withFileTypes: true })
+  .filter(dirent => dirent.isDirectory())
+  .map(dirent => dirent.name)
+  .filter(name => fs.existsSync(path.join(projectPath, name, "index.md")));
+let indexMdPaths = directoriesWithIndexMd
+  .map(name => path.join(projectPath, name, "index.md"));
 
+let outputObj = [];
+directoriesWithIndexMd.forEach(directory => {
+  let indexMdStr = fs.readFileSync(path.join(projectPath, directory, "index.md")).toString().split("\r\n");
+  let html = indexMdStr.map(str => converter.makeHtml(str));
 
-// fs.writeFile(outputFilePath, )
+  outputObj.push({
+    name: directory,
+    html
+  })
+});
 
+fs.writeFileSync(outputFilePath, JSON.stringify(outputObj, null, 2));
+console.log(`Build done! check file at projects/htmlString.json`)

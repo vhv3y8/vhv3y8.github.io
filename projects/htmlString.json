@@ -1,0 +1,15 @@
+[
+  {
+    "name": "snapshot-tabs",
+    "html": [
+      "<h2 id=\"snapshottabs\">SnapShot Tabs</h2>",
+      "",
+      "<ul>\n<li>test</li>\n</ul>",
+      "",
+      "<ol>\n<li>hi</li>\n</ol>",
+      "<ol start=\"2\">\n<li>bye</li>\n</ol>",
+      "",
+      "<p><img src=\"/projects/snapshot-tabs/snapshottabs.png\" alt=\"tt\" /></p>"
+    ]
+  }
+]

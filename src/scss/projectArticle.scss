@@ -1,0 +1,153 @@
+@mixin description-margin-bottom {
+  margin-bottom: 5px;
+}
+
+p.countBlock {
+  margin: 5px 0;
+
+  span.count {
+    font-size: 0.9em;
+    color: #777;
+  }
+}
+
+section#list {
+  // padding: 0;
+
+  article {
+    width: 100%;
+    margin: 10px 0;
+    // background-color: #e8e8e8;
+
+    // border-radius: 5px;
+
+    // display: grid;
+    // grid-template-columns: 64px 1fr;
+    h2.name {
+      margin-bottom: 5px;
+      font-size: 22px;
+
+      span.title {
+        font-family: "Arvo", "Pretendard variable", sans-serif;
+        margin-right: 5px;
+      }
+
+      p.tagContainer {
+        display: inline-flex;
+        position: relative;
+        bottom: .2em;
+      }
+
+
+      span.tag {
+        height: 1.25em;
+        background-color: #d9d9d9;
+        color: #666;
+        padding: .35em;
+        font-size: 12px;
+      }
+    }
+
+    .middle {
+      display: flex;
+      flex-direction: row;
+
+      // margin-bottom: 5px;
+    }
+
+    .icon {
+      // display: flex;
+      margin: auto;
+
+      img {
+        --img-width: 55px;
+        // margin: auto 0;
+
+        width: var(--img-width);
+        height: var(--img-width);
+      }
+    }
+
+    .description {
+      padding-left: 15px;
+      // max-width: 100%;
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+
+
+      p {
+        @include description-margin-bottom;
+      }
+
+      p.info {
+        font-size: 14px;
+      }
+
+      p.name {
+        font-size: 18px;
+        font-weight: 400;
+      }
+
+
+
+      span.moreContainer {
+        display: flex;
+      }
+
+      a.more {
+        // width: 150px;
+        // height: 70px;
+        margin-top: 5px;
+        font-size: 14px;
+        // background-color: #d9d9d9;
+        background-color: #aaa;
+        padding: .4rem 0.7rem;
+        text-decoration: none;
+        // border-radius: 5px;
+
+        &:hover {
+          background-color: #999;
+        }
+
+        span,
+        i {
+          color: #f5f5f5;
+        }
+
+
+      }
+    }
+
+    div.sectionFooter {
+      height: 2.2rem;
+
+      display: flex;
+      align-items: center;
+
+      .period {
+        // flex: 1;
+        font-size: 21px;
+
+        strong {
+          color: #666;
+        }
+      }
+
+      a.more {
+        width: 80px;
+        background-color: #bbb;
+        // height: 100%;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: .9rem;
+        // border-radius: 2.5px;
+        padding: .4em 0;
+        margin-left: 13px;
+      }
+    }
+  }
+}
