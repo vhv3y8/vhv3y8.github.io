@@ -16,7 +16,7 @@ let indexMdPaths = directoriesWithIndexMd
 
 let outputObj = [];
 directoriesWithIndexMd.forEach(directory => {
-  let indexMdStr = fs.readFileSync(path.join(projectPath, directory, "index.md")).toString().split("\r\n");
+  let indexMdStr = fs.readFileSync(path.join(projectPath, directory, "index.md")).toString().split("\n");
   let html = indexMdStr.map(str => converter.makeHtml(str));
 
   outputObj.push({

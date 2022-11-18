@@ -4,7 +4,6 @@
 <head>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-  <script src="/require.js"></script>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -74,7 +73,8 @@
     <section id="list">
       <% for (let i=0; i < infoArr.length; i++) { %>
       <% let curr = infoArr[i]; %>
-      <article>
+      <% let projectName = curr.name.toLowerCase().split(" ").join("-");%>
+      <article class="<%= projectName %>">
 
         <h2 class="name">
           <span class="title"><%= curr.name %></span>
@@ -89,7 +89,10 @@
 
         <div class="middle">
           <div class="icon">
-            <img src="<%= curr.path.iconPath %>" alt="">
+            <picture>
+              <source srcset="<%= curr.path.iconPath %>" alt="">
+              <img src="/assets/icons/ban-outline.svg" alt="" >
+            </picture>
           </div>
 
           <div class="description">

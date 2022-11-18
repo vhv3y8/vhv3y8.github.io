@@ -16,19 +16,17 @@
       "lastPublishDate": "2022-05-13T15:00:00.000Z"
     },
     {
-      "name": "test22",
-      "description": "tttt",
-      "tags": [
-        "android"
-      ],
-      "websiteUrl": "https://chrome.google.com/webstore/detail/snapshot-tabs/ffmcpchgchdikjmkfjglkhidmjploinc",
+      "name": "vhv3y8.github.io",
+      "description": "json 파일에 작성해서 빌드하는 형식으로 만든 프로젝트 모음 블로그",
+      "tags": [],
+      "websiteUrl": "https://vhv3y8.github.io/",
       "path": {
-        "iconPath": "projects/snapshot-tabs/snapshottabs.png",
+        "iconPath": "",
         "markdown": ""
       },
-      "pageUrl": "?name=test22",
-      "firstPublishDate": "2022-11-10T15:00:00.000Z",
-      "lastPublishDate": "2022-05-13T15:00:00.000Z"
+      "pageUrl": "",
+      "firstPublishDate": "2022-11-17T15:00:00.000Z",
+      "lastPublishDate": "2022-11-17T15:00:00.000Z"
     }
   ]
 }
