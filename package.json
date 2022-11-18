@@ -8,6 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "ejslint index.ejs",
     "build:md": "node tools/build.js",
+    "build:scss": "sass --style=compressed --no-source-map src/scss/style.scss:style.css",
+    "build:ejs": "ejs src/index.ejs -f projects/info.json -o index.html",
+    "bundle": "vite build",
     "build": "tsc -p tsconfig.json && ejs src/index.ejs -f projects/info.json -o index.html && sass --style=compressed --no-source-map src/scss/style.scss:style.css"
   },
   "repository": {
@@ -28,6 +31,7 @@
     "ejs-lint": "^2.0.0",
     "sass": "^1.56.0",
     "showdown": "^2.1.0",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "vite": "^3.2.3"
   }
 }

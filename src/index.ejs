@@ -4,6 +4,7 @@
 <head>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <script src="/require.js"></script>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,25 +13,35 @@
 </head>
 
 <body>
-  <main>
-    <header>
-      <h1><a href=".">vhv3y8</a>
-        <span id="name">Ryu JeongHyeon</span>
-      </h1>
+  <header>
+    <h1>
+      <a href=".">vhv3y8</a>
+      <span id="name">Ryu JeongHyeon</span>
+    </h1>
 
-      <ul>
-        <li>
-          <a href="https://github.com/vhv3y8" target="_blank">
-            <i class="fa-brands fa-github fa-xl"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://velog.io/@vhv3y8" target="_blank">
-            <i class="fa-sharp fa-solid fa-up-right-from-square fa-xl"></i>
-          </a>
-        </li>
-      </ul>
-    </header>
+    <ul>
+      <li>
+        <a href="https://github.com/vhv3y8" target="_blank">
+          <i class="fa-brands fa-github fa-xl"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://velog.io/@vhv3y8" target="_blank">
+          <i class="fa-sharp fa-solid fa-up-right-from-square fa-xl"></i>
+        </a>
+      </li>
+    </ul>
+  </header>
+
+  <main>
+
+    <section id="modalContainer">
+      <header>
+        <span></span>
+        <button><i class="fa-solid fa-x"></i></button>
+      </header>
+
+    </section>
 
     <section id="searchContainer">
       <!-- 검색창, 태그 -->
@@ -54,7 +65,10 @@
       </ul>
     </section>
 
-    <p class="countBlock">All <span class="count">23</span></p>
+    <p class="countBlock">
+      <span class="searchOption">All</span>
+      <span class="count">23</span>
+    </p>
     <hr>
 
     <section id="list">
@@ -114,6 +128,8 @@
   <footer>
     test
   </footer>
+
+  <script type="module" src="./bundled.js"></script>
 </body>
 
 </html>

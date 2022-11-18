@@ -1,0 +1,41 @@
+#modalContainer {
+  --padding: 10px;
+  width: calc(100% - 2 * var(--padding));
+  min-height: 100%;
+  border-radius: 10px;
+  background-color: #ddd;
+  padding: var(--padding);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  header {
+    --width: 2.2rem;
+    // width: 100%;
+    height: var(--width);
+    // background-color: red;
+
+    display: grid;
+    grid-template-columns: 1fr var(--width, 3rem);
+
+    button {
+      // --width: 2.25rem;
+      // width: var(--width);
+      // height: var(--width);
+      background-color: #f2f2f2;
+      // margin: var(--margin);
+      outline: none;
+      border: none;
+      border-radius: 10px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 17px;
+      // color: #ddd;
+    }
+  }
+}
