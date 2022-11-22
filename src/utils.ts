@@ -1,7 +1,5 @@
-function convertToLowerHyphen(name: string): string {
-  return name.toLowerCase().split(" ").join("-");
-}
+import { searchOption } from "./search";
 
-export {
-  convertToLowerHyphen
+export function convertToLowerHyphen(name: string): string {
+  return name.toLowerCase().split(" ").join("-");
 }
