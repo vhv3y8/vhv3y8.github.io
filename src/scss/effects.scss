@@ -1,0 +1,15 @@
+@mixin easeIn($what: all, $duration: 2s) {
+  transition: $what $duration ease-in;
+}
+
+@mixin easeOut($what: all, $duration: 2s) {
+  transition: $what $duration ease-out;
+}
+
+.easeInBackgroundColor2s {
+  @include easeIn(background-color, .1s)
+}
+
+.easeOutBackgroundColor {
+  @include easeOut(background-color, .1s)
+}

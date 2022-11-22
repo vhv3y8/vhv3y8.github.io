@@ -12,27 +12,28 @@
 </head>
 
 <body>
-  <header>
-    <h1>
-      <a href=".">vhv3y8</a>
-      <span id="name">Ryu JeongHyeon</span>
-    </h1>
-
-    <ul>
-      <li>
-        <a href="https://github.com/vhv3y8" target="_blank">
-          <i class="fa-brands fa-github fa-xl"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://velog.io/@vhv3y8" target="_blank">
-          <i class="fa-sharp fa-solid fa-up-right-from-square fa-xl"></i>
-        </a>
-      </li>
-    </ul>
-  </header>
 
   <main>
+
+    <header>
+      <h1>
+        <a href=".">vhv3y8</a>
+        <span id="name">Ryu JeongHyeon</span>
+      </h1>
+
+      <ul>
+        <li>
+          <a href="https://github.com/vhv3y8" target="_blank">
+            <i class="fa-brands fa-github fa-xl"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://velog.io/@vhv3y8" target="_blank">
+            <i class="fa-sharp fa-solid fa-up-right-from-square fa-xl"></i>
+          </a>
+        </li>
+      </ul>
+    </header>
 
     <section id="modalContainer">
       <header>
@@ -48,25 +49,25 @@
       <input id="searchInput" type="text" placeholder="이름, 설명, 링크, ...">
 
       <ul id="tags">
-        <li class="tag">
+        <li class="searchTag" data-name="크롬 확장프로그램">
           <span class="name">크롬 확장프로그램</span>
           <span class="count">1</span>
         </li>
-        <li class="tag">안드로이드 앱</li>
-        <li class="tag">PWA</li>
-        <li class="tag">electron</li>
-        <li class="tag">컴파일러</li>
-        <li class="tag">svelte</li>
-        <li class="tag">react</li>
-        <li class="tag"></li>
-        <li class="tag"></li>
-        <li class="tag"></li>
+        <li class="searchTag">안드로이드 앱</li>
+        <li class="searchTag">PWA</li>
+        <li class="searchTag">electron</li>
+        <li class="searchTag">컴파일러</li>
+        <li class="searchTag">svelte</li>
+        <li class="searchTag">react</li>
+        <li class="searchTag"></li>
+        <li class="searchTag"></li>
+        <li class="searchTag"></li>
       </ul>
     </section>
 
     <p class="countBlock">
-      <span class="searchOption">All</span>
-      <span class="count">23</span>
+      <span id="searchOption">All</span>
+      <span id="count">23</span>
     </p>
     <hr>
 
@@ -91,7 +92,7 @@
           <div class="icon">
             <picture>
               <source srcset="<%= curr.path.iconPath %>" alt="">
-              <img src="/assets/icons/ban-outline.svg" alt="" >
+              <img src="/assets/icons/ban-outline.svg" alt="">
             </picture>
           </div>
 
@@ -122,15 +123,17 @@
           <% } %>
         </div>
         <% } %>
+        <hr>
       </article>
-      <hr>
       <% } %>
     </section id="list">
 
-    <footer>
-      test
-    </footer>
   </main>
+
+  <footer>
+    <hr>
+    <iframe src="https://giphy.com/embed/12xSrwKxHxB3BS" height="150" frameBorder="0" class="giphy-embed"></iframe>
+  </footer>
 
   <script type="module" src="./bundled.js"></script>
 </body>
