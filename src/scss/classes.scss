@@ -1,7 +1,8 @@
 .invisible {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 .hide {
-  display: none;
+  opacity: 0 !important;
+  bottom: -100% !important;
 }

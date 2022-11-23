@@ -77,3 +77,33 @@ h6,
 p {
   margin: 0;
 }
+
+button#goToTop {
+  --width: 3.5rem;
+  --background-color: orange;
+
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 50%;
+
+  width: var(--width);
+  height: var(--width);
+
+  background-color: var(--background-color);
+  box-shadow: 0 0 .5rem var(--background-color);
+
+  transition: opacity ease .5s, filter ease .15s;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+  }
+}

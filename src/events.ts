@@ -3,9 +3,15 @@ import { search, toggleTag, getOption } from "./search"
 
 let searchTagElems: HTMLLIElement[] = Array.from(document.querySelectorAll("li.searchTag"));
 let searchInput = document.querySelector("input#searchInput");
+let goToTopBtn: HTMLButtonElement | null = document.querySelector("button#goToTop");
 
 window.addEventListener("load", () => {
   console.log("hello from events");
+
+  let giphyIframe = document.querySelector("iframe");
+  if (giphyIframe !== null) {
+    giphyIframe.onclick = () => { };
+  }
 
   searchTagElems.forEach((searchTagElem: HTMLLIElement) => {
     searchTagElem.classList.add("easeOutBackgroundColor");
@@ -33,15 +39,30 @@ window.addEventListener("load", () => {
 
     })
   }
+
+  // go to top button
+  if (goToTopBtn !== null) {
+    goToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+      })
+    });
+  }
 });
 
 window.addEventListener("scroll", (e) => {
-  if ((window as any).oldScroll < window.scrollY) {
-    // down
-    // TODO : show go to top button
-  } else {
-    // up
-    // TODO : hide go to top button
+  if (goToTopBtn !== null) {
+    if ((window as any).oldScroll < window.scrollY) {
+      // down
+      goToTopBtn.classList.remove("hide");
+      // TODO : show go to top button
+    } else {
+      // up
+      goToTopBtn.classList.add("hide");
+      // TODO : hide go to top button
+    }
+    (window as any).oldScroll = window.scrollY;
   }
-  (window as any).oldScroll = window.scrollY;
 });
