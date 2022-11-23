@@ -100,7 +100,7 @@ button#goToTop {
   background-color: var(--background-color);
   box-shadow: 0 0 .5rem var(--background-color);
 
-  transition: opacity ease .5s, filter ease .15s;
+  transition: bottom .3s, filter ease .15s;
 
   &:hover {
     cursor: pointer;
