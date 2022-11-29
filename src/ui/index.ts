@@ -1,9 +1,13 @@
-import { searchResult, getOption } from "../search";
+import { search, searchResult, toggleTag } from "../search";
+import { tagList } from "../index";
+import { convertToLowerHyphen } from "../utils";
+import htmlStringArr from "../../projects/htmlString.json";
 
 // 클릭시 걸어주는 소소한 효과들 및 큰 기능 파일을 모으는 곳
 
-export function openPageModal(projectName: string): void {
-  let curr = document.querySelector(`#modalContainer .${projectName}`);
+export function openModal(projectName: string): void {
+  let curr = document.querySelector(`#modalContainer .${projectName}`) as HTMLElement;
+  curr.classList.remove("none");
 }
 
 export function createProjectDiv(lowerHyphenName: string): HTMLDivElement {
@@ -11,35 +15,45 @@ export function createProjectDiv(lowerHyphenName: string): HTMLDivElement {
   return elem;
 }
 
-export function applySearchUI(searchResults: Array<searchResult>): void {
-  // init
-  let allArticles = document.querySelectorAll("section#list article");
-  console.log(`all articles: ${allArticles}`);
+function createTagLiElement(name: string, color?: string): HTMLLIElement {
+  let elem = document.createElement("li");
+  let selected: "true" | "false" = "false";
+  elem.classList.add("searchTag");
+  elem.dataset.color = color;
+  elem.dataset.selected = selected;
 
-  // hide / show
-  allArticles.forEach(article => { article.classList.add("hide") });
-  // TODO: loading effect?
-  searchResults.map(res => res.projectName).forEach(projectName => {
-    document.querySelector(`article.${projectName}`)?.classList.remove("hide");
+  // add title span
+  let titleSpan = document.createElement("span");
+  titleSpan.classList.add("name");
+  titleSpan.textContent = name;
+  elem.appendChild(titleSpan);
+
+  elem.addEventListener("click", () => {
+    if (selected === "false") {
+      selected = "true";
+      elem.style.backgroundColor = "#ffa700";
+    } else {
+      elem.style.backgroundColor = "#d9d9d9";
+      selected = "false";
+    }
+
+    toggleTag(name);
+    search();
   });
 
-  // apply search result count ui
-  let searchOptionSpan = document.querySelector("span#searchOption");
-  let searchCountSpan = document.querySelector("span#count");
-
-  // generate search option text
-  let searchOption = getOption();
-  let searchOptionText;
-  if (searchOption.tags.length === 0) {
-    searchOptionText = searchOption.text;
-  } else {
-    searchOptionText = `"${searchOption.text}" & [${searchOption.tags.join(", ")}] :`;
-  }
-
-  if (searchOptionSpan !== null) {
-    searchOptionSpan.textContent = searchOptionText;
-  }
-  if (searchCountSpan !== null) {
-    searchCountSpan.textContent = searchResults.length + "";
-  }
+  return elem;
 }
+
+window.addEventListener("load", () => {
+  // create and add tags li element to ul
+  let tagsContainer = document.querySelector("ul#tags") as HTMLUListElement;
+  tagList.forEach(tag => {
+    tagsContainer.appendChild(createTagLiElement(tag));
+  });
+
+  // init htmlString
+  let modalContainer = document.querySelector("#modalContainer") as HTMLElement;
+  htmlStringArr.forEach(obj => {
+    (modalContainer.getElementsByClassName(obj.name)[0] as HTMLElement).insertAdjacentHTML("afterbegin", obj.html);
+  });
+})

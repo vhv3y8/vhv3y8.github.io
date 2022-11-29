@@ -11,14 +11,16 @@
         "iconPath": "projects/snapshot-tabs/snapshottabs.png",
         "markdown": ""
       },
-      "pageUrl": "",
+      "pageUrl": "?name=snapshot-tabs",
       "firstPublishDate": "2022-05-10T15:00:00.000Z",
       "lastPublishDate": "2022-05-13T15:00:00.000Z"
     },
     {
       "name": "vhv3y8.github.io",
       "description": "json 파일에 작성해서 빌드하는 형식으로 만든 프로젝트 모음 블로그",
-      "tags": [],
+      "tags": [
+        "웹페이지"
+      ],
       "websiteUrl": "https://vhv3y8.github.io/",
       "path": {
         "iconPath": "",

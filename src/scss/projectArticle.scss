@@ -2,15 +2,6 @@
   margin-bottom: 5px;
 }
 
-p.countBlock {
-  margin: 5px 0;
-
-  span.count {
-    font-size: 0.9em;
-    color: #777;
-  }
-}
-
 section#list {
   // padding: 0;
 
@@ -25,7 +16,7 @@ section#list {
     // grid-template-columns: 64px 1fr;
     h2.name {
       margin-bottom: 5px;
-      font-size: 22px;
+      font-size: 1.3rem;
 
       span.title {
         font-family: "Arvo", "Pretendard variable", sans-serif;
@@ -41,10 +32,11 @@ section#list {
 
       span.tag {
         height: 1.25em;
-        background-color: #d9d9d9;
-        color: #666;
+        background-color: #777;
+        color: #eee;
         padding: .35em;
-        font-size: 12px;
+        font-weight: 400;
+        font-size: 0.8rem;
       }
     }
 
@@ -91,13 +83,31 @@ section#list {
         font-weight: 400;
       }
 
+      p.link {
+        font-size: 0.9rem;
+
+        a {
+          display: inline-flex;
+          align-items: center;
+
+        }
+
+        i {
+          margin-left: 3px;
+          color: #555;
+          font-size: 0.8rem;
+          text-decoration: none;
+        }
+
+      }
+
 
 
       span.moreContainer {
         display: flex;
       }
 
-      a.more {
+      button.more {
         // width: 150px;
         // height: 70px;
         margin-top: 5px;
@@ -106,6 +116,7 @@ section#list {
         background-color: #aaa;
         padding: .4rem 0.7rem;
         text-decoration: none;
+        border: none !important;
         // border-radius: 5px;
 
         &:hover {
@@ -132,11 +143,11 @@ section#list {
         font-size: 21px;
 
         strong {
-          color: #666;
+          color: #555;
         }
       }
 
-      a.more {
+      button.more {
         width: 80px;
         background-color: #bbb;
         // height: 100%;
@@ -148,6 +159,7 @@ section#list {
         // border-radius: 2.5px;
         padding: .4em 0;
         margin-left: 13px;
+        border: none !important;
       }
     }
   }

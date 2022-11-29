@@ -1,7 +1,7 @@
 main {
   position: relative;
 
-  min-height: 100vh;
+  // min-height: 100vh;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -9,4 +9,17 @@ main {
 
 section#list {
   flex: 1;
+}
+
+p.countBlock {
+  margin: 5px 0;
+  font-size: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+
+  span.count {
+    // font-size: 0.9em;
+    color: #777;
+  }
 }

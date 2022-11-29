@@ -1,3 +1,7 @@
+import { projectNameList, projectSearchList } from "./index";
+import { applySearchListUI, applySearchOptionTextUI } from "./ui/searchUI";
+import { convertToLowerHyphen } from "./utils";
+
 export type searchOption = {
   tags: string[],
   text: string
@@ -9,61 +13,89 @@ export type searchResult = {
   where?: Set<searchPlace>
 }
 
-export let searchOption: searchOption = {
+export let currentOption: searchOption = {
   tags: [],
   text: "",
 };
 
 export function initSearchOption(option: searchOption): void {
-  searchOption = option;
+  currentOption = option;
 }
 
 export function clearSearchTags(): void {
-  searchOption.tags = [];
+  currentOption.tags = [];
 }
 
 export function setSearchText(text: string): void {
-  searchOption.text = text;
+  currentOption.text = text;
 }
 
 export function addSearchTag(tag: string): void {
-  if (!searchOption.tags.includes(tag)) {
-    searchOption.tags.push(tag);
+  if (!currentOption.tags.includes(tag)) {
+    currentOption.tags.push(tag);
   }
 }
 
 export function removeSearchTag(tag: string): void {
-  if (searchOption.tags.includes(tag)) {
-    searchOption.tags = searchOption.tags.filter(str => str !== tag);
+  if (currentOption.tags.includes(tag)) {
+    currentOption.tags = currentOption.tags.filter(str => str !== tag);
   }
 }
 
 export function toggleTag(tag: string): void {
-  if (searchOption.tags.includes(tag)) {
-    searchOption.tags = searchOption.tags.filter(str => str !== tag);
+  if (currentOption.tags.includes(tag)) {
+    currentOption.tags = currentOption.tags.filter(str => str !== tag);
   } else {
-    searchOption.tags.push(tag);
+    currentOption.tags.push(tag);
   }
 }
 
-export function search(option?: searchOption)
-  : Array<searchResult> {
-  if (option !== undefined) {
-
-  } else {
-
-  }
-  // get project datas
+function apply(option: searchOption = currentOption)
+  : searchResult[] {
 
   // search and get result
-  let result: Array<searchResult> = [{
-    projectName: "vhv3y8.github.io"
-  }];
-
-  return result;
+  return projectSearchList
+    .filter(projectObj => {
+      // tags OR
+      if (option.tags.length > 0 && option.tags.every(tag => !projectObj.tags.includes(tag))) {
+        console.log({
+          projectObj,
+          reason: "tags OR"
+        });
+        return false;
+      }
+      // AND text
+      if (projectObj.searchString.some(str => str.includes(option.text))) {
+        return true;
+      } else {
+        console.log({
+          projectObj,
+          reason: "AND text"
+        });
+        return false;
+      }
+    })
+    .map(projectObj => {
+      // change to searchResult format
+      return {
+        projectName: projectObj.name
+      }
+    });
 }
 
 export function getOption(): searchOption {
   // function for testing
-  return searchOption;
+  return currentOption;
+}
+
+export function search(): void {
+  if (currentOption.tags.length == 0 && currentOption.text == "") {
+    applySearchListUI("all");
+    applySearchOptionTextUI("all", projectNameList.length);
+  } else {
+    let result = apply();
+    console.log({ msg: "result is", result });
+    applySearchListUI(result);
+    applySearchOptionTextUI(currentOption, result.length);
+  }
 }
