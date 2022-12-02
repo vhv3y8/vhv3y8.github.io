@@ -4,7 +4,7 @@ import { convertToLowerHyphen } from "./utils";
 
 let searchInput = document.querySelector("input#searchInput") as HTMLInputElement;
 let goToTopBtn: HTMLButtonElement | null = document.querySelector("button#goToTop");
-let openModalElements = document.querySelectorAll("button.more") as NodeListOf<HTMLElement>;
+let openModalElements = document.querySelectorAll("button.openModal") as NodeListOf<HTMLElement>;
 
 window.addEventListener("load", () => {
   console.log("hello from events");
@@ -33,15 +33,15 @@ window.addEventListener("load", () => {
   }
 
   // click event for modal open (a.more tag)
-  openModalElements.forEach(moreElem => {
-    moreElem.addEventListener("click", () => {
+  openModalElements.forEach(button => {
+    button.addEventListener("click", () => {
       history.pushState({
-        projectName: moreElem.dataset.projectname
-      }, "", `?projectname=${moreElem.dataset.projectname}`);
+        projectName: button.dataset.projectname
+      }, "", `?projectname=${button.dataset.projectname}`);
       console.log("hello from more element click event");
       (document.querySelector("main") as HTMLElement).classList.add("none");
       (document.getElementById("modalContainer") as HTMLElement).classList.remove("none");
-      document.querySelector(`#modalContainer article.${moreElem.dataset.projectname}`)?.classList.remove("none");
+      document.querySelector(`#modalContainer article.${button.dataset.projectname}`)?.classList.remove("none");
     });
   });
 
@@ -51,8 +51,11 @@ window.addEventListener("load", () => {
   });
 });
 
-window.addEventListener("popstate", (e) => {
-  console.log("pop state event called.");
+window.addEventListener("popstate", (e: PopStateEvent) => {
+  console.log({
+    msg: "pop state event called.",
+    state: e.state
+  });
 })
 
 window.addEventListener("scroll", (e) => {

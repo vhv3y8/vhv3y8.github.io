@@ -6,14 +6,15 @@
       "tags": [
         "크롬 확장프로그램"
       ],
-      "websiteUrl": "https://chrome.google.com/webstore/detail/snapshot-tabs/ffmcpchgchdikjmkfjglkhidmjploinc",
-      "path": {
-        "iconPath": "projects/snapshot-tabs/snapshottabs.png",
-        "markdown": ""
+      "startDate": "2022-04-30T15:00:00.000Z",
+      "devMonths": [
+        "2022.05"
+      ],
+      "website": {
+        "name": "크롬 웹 스토어",
+        "link": "https://chrome.google.com/webstore/detail/snapshot-tabs/ffmcpchgchdikjmkfjglkhidmjploinc"
       },
-      "pageUrl": "?name=snapshot-tabs",
-      "firstPublishDate": "2022-05-10T15:00:00.000Z",
-      "lastPublishDate": "2022-05-13T15:00:00.000Z"
+      "icon": "projects/snapshot-tabs/snapshottabs.png"
     },
     {
       "name": "vhv3y8.github.io",
@@ -21,14 +22,13 @@
       "tags": [
         "웹페이지"
       ],
-      "websiteUrl": "https://vhv3y8.github.io/",
-      "path": {
-        "iconPath": "",
-        "markdown": ""
-      },
-      "pageUrl": "",
-      "firstPublishDate": "2022-11-17T15:00:00.000Z",
-      "lastPublishDate": "2022-11-17T15:00:00.000Z"
+      "startDate": "2022-04-30T15:00:00.000Z",
+      "devMonths": [
+        "2022.11"
+      ],
+      "website": {
+        "link": "https://vhv3y8.github.io/"
+      }
     }
   ]
 }

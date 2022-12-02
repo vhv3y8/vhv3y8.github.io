@@ -11,11 +11,13 @@ let projectList: {
   name: string,
   description: string,
   tags: string[],
-  websiteUrl: string,
-  path: object,
-  pageUrl: string,
-  firstPublishDate: string,
-  lastPublishDate: string
+  startDate: string,
+  devMonths: string[],
+  website?: {
+    name?: string,
+    link: string
+  },
+  icon?: string,
 }[] = info.infoArr;
 
 export let projectNameList = projectList.map(obj => obj.name).map(convertToLowerHyphen);
@@ -25,11 +27,18 @@ export let projectSearchList: {
   tags: string[],
   searchString: string[]
 }[] = projectList.map(obj => {
+  let searchString = [...obj.devMonths, obj.name, obj.description];
+  // add url name and link if exists
+  if (obj.website !== undefined) {
+    searchString.push(obj.website.link);
+    if (obj.website.name !== undefined) {
+      searchString.push(obj.website.name);
+    }
+  }
   return {
     name: obj.name,
     tags: obj.tags,
-    // .map(convertToLowerHyphen),
-    searchString: [obj.name, obj.description, obj.websiteUrl]
+    searchString: searchString
   };
 });
 

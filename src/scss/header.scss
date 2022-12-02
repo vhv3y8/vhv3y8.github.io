@@ -1,11 +1,26 @@
 header {
   width: 100%;
   margin: 1rem 0 .5rem;
+  position: relative;
 
 
   // display: flex;
   // justify-content: space-between;
   // align-items: center;
+
+  #closeModal {
+    --width: 3rem;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    // right: 0;
+    width: var(--width);
+    height: var(--width);
+    border: none;
+    background-color: #bbb;
+    font-size: 1.5rem;
+  }
 
   h1 {
     // display: inline-block;

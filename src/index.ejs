@@ -17,6 +17,10 @@
   </button>
 
   <header>
+    <button id="closeModal" class="none">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
     <h1>
       <a href=".">vhv3y8</a>
       <span id="name">Ryu JeongHyeon</span>
@@ -63,55 +67,73 @@
       <% for (let i=0; i < infoArr.length; i++) { %>
       <% let curr = infoArr[i]; %>
       <% let projectName = curr.name.toLowerCase().split(" ").join("-");%>
-      <article class="<%= projectName %>">
 
-        <h2 class="name">
-          <span class="title"><%= curr.name %></span>
-          <% if (curr.tags.length > 0) { %>
+      <article class="<%= projectName %>">
+        <div class="left">
           <p class="tagContainer">
             <% for (let j=0; j < curr.tags.length; j++) { %>
             <span class="tag"><%= curr.tags[j] %></span>
             <% } %>
           </p class="tagContainer">
-          <% } %>
-        </h2>
 
-        <div class="middle">
-          <div class="icon">
-            <picture>
-              <source srcset="<%= curr.path.iconPath %>" alt="">
-              <img src="/assets/icons/ban-outline.svg" alt="">
-            </picture>
-          </div>
+          <h2 class="name">
+            <% if (curr.icon !== undefined) { %>
+            <img src="<%= curr.icon %>" alt="">
+            <% } %>
+            <span class="title"><%= curr.name %></span>
+          </h2>
 
           <div class="description">
             <p class="info"><%= curr.description %></p>
-            <p class="link">
-              <a href="<%= curr.websiteUrl %>" target="_blank" title="<%= curr.websiteUrl %> (new tab) ">
-                <%= curr.websiteUrl %>
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
+            <p class="devDate">
+              <% if (curr.devMonths.length === 0) { %>
+              <% let startDate = new Date(curr.startDate); %>
+              <%= `${startDate.getFullYear()}.${(startDate.getMonth() < 10) ? `0${startDate.getMonth()}` : startDate.getMonth()}.${startDate.getDay()}~` %>
+              <% } else { %>
+              <% for (let i=0; i < curr.devMonths.length-1; i++) { %>
+              <%= `${curr.devMonths[i]}, ` %>
+              <% } %>
+              <%= `${curr.devMonths[curr.devMonths.length-1]}` %>
+              <% } %>
             </p>
+            <% if (curr.website !== undefined) { %>
+            <div class="more">
+              <!-- desktop -->
+              <a href="<%= curr.website.link %> " target="_blank" class="link desktop">
+                <i class="fa-solid fa-link"></i>
+                <%= curr.website.link %>
+              </a>
+              <!-- mobile -->
+              <button class="openModal mobile" data-projectname="<%= projectName %>">
+                <span>
+                  더보기
+                  <i class="fa-solid fa-square-arrow-up-right"></i>
+                </span>
+              </button>
+              <a href="<%= curr.website.link %> " target="_blank" class="link mobile">
+                <i class="fa-solid fa-link"></i>
+                <% if (curr.website.name !== undefined) { %>
+                <%= curr.website.name  %>
+                <% } else { %>
+                website
+                <% } %>
+              </a>
+            </div>
+            <% } %>
           </div>
         </div>
 
-        <% if (curr.pageUrl || curr.firstPublishDate) { %>
-        <div class="sectionFooter">
-          <% if (curr.firstPublishDate)  { %>
-          <% let currDate = new Date(curr.firstPublishDate); %>
-          <span class="period"><strong><%= `${currDate.getFullYear()}.${currDate.getMonth()+1 < 10 ? "0" + (currDate.getMonth()+1) : currDate.getMonth()+1} ~` %></strong></span>
-          <% } %>
-          <% if (curr.pageUrl !== "") { %>
-          <button class="more" data-projectname="<%= projectName %>" name="openModal">
-            <span>more...</span>
+        <div class="right desktop">
+          <button class="openModal" data-projectname="<%= projectName %>">
+            <span>더보기</span>
+            <i class="fa-solid fa-square-arrow-up-right"></i>
           </button>
-          <% } %>
         </div>
-        <% } %>
-        <hr>
+        <!-- <hr> -->
       </article>
+
       <% } %>
-    </section id="list">
+    </section>
 
   </main>
 

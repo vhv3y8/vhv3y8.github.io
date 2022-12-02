@@ -9,7 +9,8 @@
 "./classes.scss",
 "./effects.scss",
 "./backgroundColor.scss",
-"./footer.scss";
+"./footer.scss",
+"./mixins.scss";
 
 // Default Settings
 
@@ -52,7 +53,7 @@ html {
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 840px) {
   body {
     @include body-common;
 
@@ -61,7 +62,7 @@ html {
   }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 841px) {
   body {
     @include body-common;
 
@@ -79,6 +80,13 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+  }
 }
 
 button#goToTop {
@@ -105,9 +113,4 @@ button#goToTop {
   box-shadow: 0 0 .5rem var(--background-color);
 
   transition: bottom .3s, filter ease .15s;
-
-  &:hover {
-    cursor: pointer;
-    filter: brightness(1.1);
-  }
 }
