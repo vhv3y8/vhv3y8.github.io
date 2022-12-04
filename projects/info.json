@@ -14,6 +14,9 @@
         "name": "크롬 웹 스토어",
         "link": "https://chrome.google.com/webstore/detail/snapshot-tabs/ffmcpchgchdikjmkfjglkhidmjploinc"
       },
+      "links": {
+        "github": "https://github.com/vhv3y8/SnapShotTabs"
+      },
       "icon": "projects/snapshot-tabs/snapshottabs.png"
     },
     {
@@ -28,6 +31,9 @@
       ],
       "website": {
         "link": "https://vhv3y8.github.io/"
+      },
+      "links": {
+        "github": "https://github.com/vhv3y8/vhv3y8.github.io"
       }
     }
   ]

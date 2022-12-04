@@ -42,17 +42,23 @@ export let projectSearchList: {
   };
 });
 
-export let tagList: Set<string> = new Set();
+export let tagCountList: {
+  [tag: string]: number
+} = {};
 projectList.forEach(obj => {
   obj.tags.forEach(tag => {
-    tagList.add(tag);
+    if (tagCountList[tag] === undefined) {
+      tagCountList[tag] = 1
+    } else {
+      tagCountList[tag]++;
+    }
   });
 });
 
 console.log(projectList);
 console.log(projectNameList);
 console.log(projectSearchList);
-console.log(tagList);
+console.log(tagCountList);
 
 // init ui
 search();

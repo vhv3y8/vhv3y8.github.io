@@ -1,8 +1,8 @@
 #modalContainer {
   --padding: .7rem 1rem;
+  padding: var(--padding);
   border-radius: 10px;
   background-color: #ddd;
-  padding: var(--padding);
   margin-bottom: 1.5rem;
 
 

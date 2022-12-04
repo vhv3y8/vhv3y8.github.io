@@ -60,11 +60,11 @@ window.addEventListener("popstate", (e: PopStateEvent) => {
 
 window.addEventListener("scroll", (e) => {
   if (goToTopBtn !== null) {
-    if ((window as any).oldScroll < window.scrollY && 50 < window.scrollY) {
-      // down
+    if ((window as any).oldScroll > window.scrollY && 50 < window.scrollY) {
+      // up
       goToTopBtn.classList.remove("hide");
     } else {
-      // up
+      // down
       goToTopBtn.classList.add("hide");
     }
     (window as any).oldScroll = window.scrollY;

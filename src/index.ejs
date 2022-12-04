@@ -104,12 +104,12 @@
                 <%= curr.website.link %>
               </a>
               <!-- mobile -->
-              <button class="openModal mobile" data-projectname="<%= projectName %>">
+              <a href="projects/<%= projectName %>" class="openModal mobile">
                 <span>
                   더보기
                   <i class="fa-solid fa-square-arrow-up-right"></i>
                 </span>
-              </button>
+              </a>
               <a href="<%= curr.website.link %> " target="_blank" class="link mobile">
                 <i class="fa-solid fa-link"></i>
                 <% if (curr.website.name !== undefined) { %>
@@ -124,10 +124,10 @@
         </div>
 
         <div class="right desktop">
-          <button class="openModal" data-projectname="<%= projectName %>">
+          <a href="projects/<%= projectName %>" class="openModal">
             <span>더보기</span>
             <i class="fa-solid fa-square-arrow-up-right"></i>
-          </button>
+          </a>
         </div>
         <!-- <hr> -->
       </article>

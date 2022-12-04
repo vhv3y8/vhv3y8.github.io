@@ -6,12 +6,12 @@
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "ejslint src/index.ejs",
-    "build:md": "node tools/build.js",
-    "build:scss": "sass --style=compressed --no-source-map src/scss/style.scss:style.css",
+    "lint": "ejslint src/index.ejs && ejslint projects/postTemplate.ejs",
+    "build:post": "node tools/buildPost.js",
+    "build:scss": "sass --style=compressed --no-source-map src/scss/style.scss:style.css && sass --style=compressed --no-source-map projects/style.scss:projects/style.css",
     "build:ejs": "ejs src/index.ejs -f projects/info.json -o index.html",
     "build:ts": "vite build",
-    "build": "tsc -p tsconfig.json && vite build && node tools/build.js && ejs src/index.ejs -f projects/info.json -o index.html && sass --style=compressed --no-source-map src/scss/style.scss:style.css"
+    "build": "npm run build:post && npm run build:scss && npm run build:ejs && npm run build:ts"
   },
   "repository": {
     "type": "git",

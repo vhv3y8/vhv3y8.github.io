@@ -1,0 +1,65 @@
+section#information {
+  padding-bottom: 5px;
+  border-bottom: 2px solid #777;
+  margin-block-end: 1rem;
+
+  * {
+    margin: 0;
+  }
+
+  h2 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+
+    span {
+      width: max-content;
+    }
+
+    a.title {
+      display: inline-flex;
+      flex-flow: row wrap;
+      align-items: center;
+      gap: .5rem;
+      text-decoration: none;
+
+      font-family: "Arvo", "Pretendard Variable", sans-serif;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      img {
+        --width: 1.75rem;
+        width: var(--width);
+        height: var(--width);
+      }
+    }
+
+    span.devMonth {
+      font-size: .9rem;
+      color: #666;
+      padding-right: 5px;
+      margin: 5px 0;
+    }
+  }
+
+  p.links {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 10px;
+
+    margin-block-start: 6px;
+    margin-block-end: 5px;
+
+    a {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+  }
+}

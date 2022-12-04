@@ -1,0 +1,108 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+@import "../src/scss/header.scss",
+"../src/scss/default.scss",
+"../src/scss/classes.scss",
+"./header.scss",
+"./main.scss",
+"../src/scss/mixins.scss";
+
+:root {
+  font-size: 18px;
+}
+
+* {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+main {
+
+  --padding: .7rem 1.4rem 1.4rem;
+  padding: var(--padding);
+  border-radius: 10px;
+  background-color: #e3e3e3;
+
+  margin-bottom: 1.5rem;
+
+
+  // :not(#information) * {
+  //   margin-bottom: .3rem;
+  // }
+
+  // #information * {
+  //   margin: 0
+  // }
+
+  p {
+    // margin-bottom: .3rem;
+    line-height: 1.9;
+    overflow-y: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Arvo", "Pretendard Variable", sans-serif;
+    margin: .6rem 0;
+  }
+
+  blockquote {
+    position: relative;
+    width: calc(100% - 2rem);
+    padding-left: 5px;
+
+    &::before {
+      position: absolute;
+
+      content: "HIHIHIHIHI";
+      width: 1rem;
+      height: 100%;
+      background-color: blue;
+    }
+  }
+
+  ul {
+    list-style-type: "-";
+
+
+    li {
+      display: list-item;
+    }
+  }
+
+  pre {
+    background-color: #ccc;
+    padding: 1rem;
+    overflow-x: scroll;
+  }
+
+  :not(pre) code {
+    background-color: #ccc;
+    padding: .25rem;
+  }
+
+  code {
+    font-family: "Inconsolata", "Pretendard Variable", sans-serif;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background-color: #999;
+    margin: .5rem 0;
+  }
+}
+
+// mobile
+@include mobile {
+  main {
+    pre {
+      font-size: .75em;
+    }
+  }
+}

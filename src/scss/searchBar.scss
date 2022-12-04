@@ -28,6 +28,11 @@ section#searchContainer {
       &:hover {
         cursor: pointer;
       }
+
+      span.count {
+        margin-left: 4px;
+        font-size: .8rem;
+      }
     }
   }
 }

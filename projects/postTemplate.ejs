@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/projects/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <button id="goToTop" class="hide" name="goToTop">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <header>
+    <a href="/" id="closeModal">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <h1>
+      <a href="/">vhv3y8</a>
+      <span id="name">Ryu JeongHyeon</span>
+    </h1>
+
+    <ul>
+      <li>
+        <a href="https://github.com/vhv3y8" target="_blank" title="github.com/vhv3y8 (new tab)">
+          <i class="fa-brands fa-github fa-xl"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://velog.io/@vhv3y8" target="_blank" title="velog.io/@vhv3y8 (new tab)">
+          <i class="fa-solid fa-feather"></i>
+        </a>
+      </li>
+    </ul>
+  </header>
+
+  <main>
+    <section id="information">
+      <h2>
+        <a target="_blank" href="<%= info.website.link %>" class="title">
+          <%= info.name %>
+          <% if (info.icon !== undefined) { %>
+          <img src="/<%= info.icon %> " alt="icon">
+          <% } %>
+        </a>
+        <span class="devMonth">
+          <%= info.devMonths.join(", ")  %>
+        </span>
+      </h2>
+
+      <% if (info.links !== undefined) { %>
+      <p class="links">
+        <% let keys = Object.keys(info.links); %>
+        <% for (let j=0; j < keys.length; j++) { %>
+        <% if (keys[j] === "github") { %>
+        <a href="<%= info.links[keys[j]] %> " target="_blank" class="github">
+          <i class="fa-brands fa-github"></i>
+          <span>github</span>
+        </a>
+        <% } else if (keys[j] === "youtube") { %>
+        <a href="<%= info.links[keys[j]] %> " target="_blank" class="youtube">
+          <i class="fa-brands fa-youtube"></i>
+          <span>youtube</span>
+        </a>
+        <% } else { %>
+        <a href="<%= info.links[keys[j]] %> " target="_blank">
+          <i class="fa-solid fa-link"></i>
+          <span><%= keys[j] %></span>
+        </a>
+        <% } %>
+        <% } %>
+      </p>
+      <% } %>
+    </section>
+
+    <%- html %>
+  </main>
+
+  <script src="/projects/script.js" type="module"></script>
+</body>
+
+</html>
