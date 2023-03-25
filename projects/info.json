@@ -35,6 +35,40 @@
       "links": {
         "github": "https://github.com/vhv3y8/vhv3y8.github.io"
       }
+    },
+    {
+      "name": "resizer",
+      "description": "선택한 영역의 폰트 크기 및 종류를 바꾸게 해주는 확장 프로그램",
+      "tags": [
+        "크롬 확장프로그램"
+      ],
+      "startDate": "2022-01-15T15:00:00.000Z",
+      "devMonths": [
+        "2023.03."
+      ],
+      "website": {
+        "link": "https://github.com/vhv3y8/resizer"
+      },
+      "links": {
+        "github": "https://github.com/vhv3y8/resizer"
+      }
+    },
+    {
+      "name": "ytmusic-experience",
+      "description": "유튜브 뮤직 페이지의 사용 경험을 높여주는 확장 프로그램",
+      "tags": [
+        "크롬 확장프로그램"
+      ],
+      "startDate": "2022-03-23T15:00:00.000Z",
+      "devMonths": [
+        "2023.03."
+      ],
+      "website": {
+        "link": "https://github.com/vhv3y8/ytmusic-experience"
+      },
+      "links": {
+        "github": "https://github.com/vhv3y8/ytmusic-experience"
+      }
     }
   ]
 }

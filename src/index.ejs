@@ -64,8 +64,9 @@
     <hr>
 
     <section id="list">
-      <% for (let i=0; i < infoArr.length; i++) { %>
-      <% let curr = infoArr[i]; %>
+      <% let sortedArr = infoArr.reverse(); %>
+      <% for (let i=0; i < sortedArr.length; i++) { %>
+      <% let curr = sortedArr[i]; %>
       <% let projectName = curr.name.toLowerCase().split(" ").join("-");%>
 
       <article class="<%= projectName %>">
